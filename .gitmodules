@@ -1,0 +1,36 @@
+[submodule "vim/dotvim/bundle/ag"]
+	path = vim/dotvim/bundle/ag
+	url = git@github.com:rking/ag.vim.git
+[submodule "vim/dotvim/bundle/ctrlp.vim"]
+	path = vim/dotvim/bundle/ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "vim/dotvim/bundle/vim-abolish"]
+	path = vim/dotvim/bundle/vim-abolish
+	url = git@github.com:tpope/vim-abolish.git
+[submodule "vim/dotvim/bundle/vim-better-whitespace"]
+	path = vim/dotvim/bundle/vim-better-whitespace
+	url = git@github.com:ntpeters/vim-better-whitespace.git
+[submodule "vim/dotvim/bundle/vim-fugitive"]
+	path = vim/dotvim/bundle/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule "vim/dotvim/bundle/vim-rails"]
+	path = vim/dotvim/bundle/vim-rails
+	url = git@github.com:tpope/vim-rails.git
+[submodule "vim/dotvim/bundle/bufexplorer"]
+	path = vim/dotvim/bundle/bufexplorer
+	url = git@github.com:jlanzarotta/bufexplorer.git
+[submodule "vim/dotvim/bundle/nerdtree"]
+	path = vim/dotvim/bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "vim/dotvim/bundle/vim-airline"]
+	path = vim/dotvim/bundle/vim-airline
+	url = git@github.com:bling/vim-airline.git
+[submodule "vim/dotvim/bundle/vim-bundler"]
+	path = vim/dotvim/bundle/vim-bundler
+	url = git@github.com:tpope/vim-bundler.git
+[submodule "vim/dotvim/bundle/vim-gitgutter"]
+	path = vim/dotvim/bundle/vim-gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "vim/dotvim/bundle/vitality.vim"]
+	path = vim/dotvim/bundle/vitality.vim
+	url = git@github.com:sjl/vitality.vim.git

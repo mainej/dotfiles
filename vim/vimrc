@@ -1,0 +1,57 @@
+set nocompatible " Goodbye vi
+
+set relativenumber " Show line numbers relatively
+syntax enable " Highlight syntax
+
+" Tabs and indentation
+set tabstop=2
+set softtabstop=2
+set expandtab
+set shiftwidth=2
+set cindent
+set autoindent
+
+let mapleader = "," " Leader key remapping
+
+" Case sensitive searches only when a capital is present
+set ignorecase
+set smartcase
+
+" Highlighting search results and clearing
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+
+set laststatus=2 " Always show status bar
+set timeoutlen=1000 ttimeoutlen=0 " Change delays
+set autoread " No prompt for file changes outside Vim
+set updatetime=1000 " Update more often, less than 1000 seems to cause gitgutter glitches
+let g:strip_whitespace_on_save=1 " Remove extra whitespace on saving
+set history=1000 " Longer command history
+set hidden " Background buffers without writing to file
+runtime macros/matchit.vim " More % functionality
+set scrolloff=3 " Little bit higher scroll offset
+set backspace=2 " Allow backspace
+
+" NERDTree
+map <leader>\| :NERDTreeToggle<cr>
+
+" Persistent Undo (Keep undo history across vim restarts)
+if has('persistent_undo')
+  silent !mkdir ~/.vim-backups > /dev/null 2>&1
+  set undodir=~/.vim-backups
+  set undofile
+endif
+
+" Colors
+set t_Co=256
+set background=dark
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
+
+" Pathogen
+execute pathogen#infect()
+filetype plugin indent on
+
