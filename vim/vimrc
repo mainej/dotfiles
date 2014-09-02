@@ -34,6 +34,10 @@ runtime macros/matchit.vim " More % functionality
 set scrolloff=3 " Little bit higher scroll offset
 set backspace=2 " Allow backspace
 
+" Copying file paths to system clipboard
+noremap <leader>c :let @* = expand("%")<cr> " copy relative path
+noremap <leader>cl :let @* = expand("%") . ":" . line(".")<cr> " copy relative path and line number
+
 " NERDTree
 map <leader>\| :NERDTreeToggle<cr>
 
