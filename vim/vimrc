@@ -52,7 +52,7 @@ if has('persistent_undo')
 endif
 
 " Save on focus lost/buffer switch
-:au FocusLost * :wa
+:au FocusLost * silent! :wa
 :set autowriteall
 
 " Colors
