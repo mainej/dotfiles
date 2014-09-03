@@ -51,6 +51,10 @@ if has('persistent_undo')
   set undofile
 endif
 
+" Save on focus lost/buffer switch
+:au FocusLost * :wa
+:set autowriteall
+
 " Colors
 set t_Co=256
 set background=dark
