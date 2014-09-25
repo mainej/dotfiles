@@ -42,7 +42,7 @@ noremap <leader>cl :let @* = expand("%") . ":" . line(".")<cr> " copy relative p
 :imap jj <Esc>
 
 " NERDTree
-map <leader>\| :NERDTreeToggle<cr>
+map <leader>1 :NERDTreeToggle<cr>
 
 " Persistent Undo (Keep undo history across vim restarts)
 if has('persistent_undo')
