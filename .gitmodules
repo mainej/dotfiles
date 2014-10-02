@@ -28,9 +28,6 @@
 [submodule "vim/dotvim/bundle/vim-bundler"]
 	path = vim/dotvim/bundle/vim-bundler
 	url = git@github.com:tpope/vim-bundler.git
-[submodule "vim/dotvim/bundle/vim-gitgutter"]
-	path = vim/dotvim/bundle/vim-gitgutter
-	url = git@github.com:airblade/vim-gitgutter.git
 [submodule "vim/dotvim/bundle/vitality.vim"]
 	path = vim/dotvim/bundle/vitality.vim
 	url = git@github.com:sjl/vitality.vim.git
