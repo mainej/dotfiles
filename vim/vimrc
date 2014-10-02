@@ -1,6 +1,6 @@
 set nocompatible " Goodbye vi
 
-set relativenumber " Show line numbers relatively
+set number
 syntax enable " Highlight syntax
 
 " Tabs and indentation
