@@ -34,3 +34,6 @@
 [submodule "vim/dotvim/bundle/vim-json"]
 	path = vim/dotvim/bundle/vim-json
 	url = git@github.com:jakar/vim-json.git
+[submodule "vim/dotvim/bundle/vim-clojure-static"]
+	path = vim/dotvim/bundle/vim-clojure-static
+	url = git@github.com:guns/vim-clojure-static.git

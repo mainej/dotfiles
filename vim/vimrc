@@ -62,7 +62,10 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^defroutes', '^context', '^GET', '^ANY', '^PUT', '^POST', '^HEAD', '^DELETE']
+
 " Pathogen
 execute pathogen#infect()
 filetype plugin indent on
+
 
