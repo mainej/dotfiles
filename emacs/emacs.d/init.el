@@ -189,7 +189,7 @@ the mode-line."
 (global-set-key (kbd "C-c ;") 'iy-go-to-char-continue)
 (global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
 (global-set-key (kbd "C-o") 'ace-jump-mode)
-(global-set-key (kbd "C-c C-g") 'magit-status)
+(global-set-key (kbd "C-c g s") 'magit-status)
 (browse-kill-ring-default-keybindings)
 
 (require 'browse-kill-ring)
