@@ -177,6 +177,9 @@ the mode-line."
   t)
 (window-number-meta-mode 1)
 
+(setq js-indent-level 2)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (global-set-key (kbd "M-/") 'hippie-expand)
 
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
