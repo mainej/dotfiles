@@ -214,3 +214,7 @@ the mode-line."
 (require 'color-theme-sanityinc-tomorrow)
 (load-theme 'sanityinc-tomorrow-night t)
 (set-face-attribute 'default nil :height 140)
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none)
