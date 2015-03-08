@@ -162,6 +162,8 @@
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+(setq ag-highlight-search t)
+
 (require 'window-number)
 (autoload 'window-number-mode "window-number"
   "A global minor mode that enables selection of windows according to
@@ -200,6 +202,7 @@ the mode-line."
 (global-set-key (kbd "C-o") 'ace-jump-mode)
 (global-set-key (kbd "C-c g s") 'magit-status)
 (global-set-key (kbd "M-y") 'browse-kill-ring)
+(global-set-key (kbd "C-c ag") 'ag-project-regexp)
 (define-key cider-mode-map (kbd "C-u C-c ,") 'cider-run-all-tests)
 
 (show-paren-mode 1)
