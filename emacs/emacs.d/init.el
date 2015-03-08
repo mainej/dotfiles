@@ -194,7 +194,6 @@ the mode-line."
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
-(global-set-key (kbd "C-x f") 'projectile-find-file)
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
 (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
 (global-set-key (kbd "C-c ;") 'iy-go-to-char-continue)
@@ -202,7 +201,7 @@ the mode-line."
 (global-set-key (kbd "C-o") 'ace-jump-mode)
 (global-set-key (kbd "C-c g s") 'magit-status)
 (global-set-key (kbd "M-y") 'browse-kill-ring)
-(global-set-key (kbd "C-c ag") 'ag-project-regexp)
+(define-key projectile-mode-map (kbd "C-x f") 'projectile-find-file)
 (define-key cider-mode-map (kbd "C-u C-c ,") 'cider-run-all-tests)
 
 (show-paren-mode 1)
