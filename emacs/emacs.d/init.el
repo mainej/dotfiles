@@ -158,6 +158,7 @@
 
 (require 'saveplace)
 (setq-default save-place t)
+(setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
@@ -205,6 +206,7 @@ the mode-line."
 (define-key cider-mode-map (kbd "C-u C-c ,") 'cider-run-all-tests)
 
 (show-paren-mode 1)
+(delete-selection-mode 1)
 (setq-default indent-tabs-mode nil)
 (setq x-select-enable-clipboard t
       x-select-enable-primary t
@@ -224,3 +226,38 @@ the mode-line."
       mac-command-key-is-meta t
       mac-command-modifier 'meta
       mac-option-modifier 'none)
+
+;; Auto refresh buffers
+(global-auto-revert-mode 1)
+
+;; Also auto refresh dired, but be quiet about it
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-verbose nil)
+
+(defun open-line-below ()
+  (interactive)
+  (end-of-line)
+  (newline)
+  (indent-for-tab-command))
+
+(defun open-line-above ()
+  (interactive)
+  (beginning-of-line)
+  (newline)
+  (forward-line -1)
+  (indent-for-tab-command))
+
+(global-set-key (kbd "<C-return>") 'open-line-below)
+(global-set-key (kbd "<C-M-return>") 'open-line-above)
+
+;; Goto line with line numbers
+(global-set-key [remap goto-line] 'goto-line-with-feedback)
+
+(defun goto-line-with-feedback ()
+  "Show line numbers temporarily, while prompting for the line number input"
+  (interactive)
+  (unwind-protect
+      (progn
+        (linum-mode 1)
+        (goto-line (read-number "Goto line: ")))
+    (linum-mode -1)))
