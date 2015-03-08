@@ -180,8 +180,14 @@ the mode-line."
 (setq js-indent-level 2)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(global-set-key (kbd "M-/") 'hippie-expand)
+(require 'browse-kill-ring)
 
+(defun cider-run-all-tests ()
+  "Runs all tests in a project. Assumes in a namespace that has run-all-tests."
+  (interactive)
+  (cider-insert-in-repl "(run-all-tests)" t))
+
+(global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
@@ -193,10 +199,8 @@ the mode-line."
 (global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
 (global-set-key (kbd "C-o") 'ace-jump-mode)
 (global-set-key (kbd "C-c g s") 'magit-status)
-(browse-kill-ring-default-keybindings)
-
-(require 'browse-kill-ring)
 (global-set-key (kbd "M-y") 'browse-kill-ring)
+(define-key cider-mode-map (kbd "C-u C-c ,") 'cider-run-all-tests)
 
 (show-paren-mode 1)
 (setq-default indent-tabs-mode nil)
