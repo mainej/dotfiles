@@ -140,8 +140,9 @@
 (setq nrepl-hide-special-buffers t)
 (setq cider-prefer-local-resources t)
 
-
+(require 'smartparens-config)
 (smartparens-global-mode t)
+
 (projectile-global-mode)
 
 (menu-bar-mode -1)
