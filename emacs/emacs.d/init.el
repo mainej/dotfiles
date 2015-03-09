@@ -20,6 +20,7 @@
                       ac-cider
                       color-theme-sanityinc-tomorrow
                       window-number
+                      exec-path-from-shell
                       popwin))
 
 (package-initialize)
@@ -30,6 +31,9 @@
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+(require 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
 
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
