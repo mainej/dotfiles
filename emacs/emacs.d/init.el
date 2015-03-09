@@ -142,6 +142,10 @@
 
 (require 'smartparens-config)
 (smartparens-global-mode t)
+(setq sp-base-key-bindings 'paredit)
+(setq sp-autoskip-closing-pair 'always)
+(setq sp-hybrid-kill-entire-symbol nil)
+(sp-use-paredit-bindings)
 
 (projectile-global-mode)
 
@@ -220,13 +224,17 @@ the mode-line."
       backup-directory-alist `(("." . ,(concat user-emacs-directory
 					       "backups"))))
 
+(add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+(add-hook 'clojure-mode-hook #'subword-mode)
+(add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
+
 (require 'color-theme-sanityinc-tomorrow)
 (load-theme 'sanityinc-tomorrow-night t)
 (set-face-attribute 'default nil :height 140)
-(setq mac-option-key-is-meta nil
+(setq mac-option-key-is-meta t
       mac-command-key-is-meta t
       mac-command-modifier 'meta
-      mac-option-modifier 'none)
+      mac-option-modifier 'meta)
 
 ;; Quietly auto refresh dired
 (setq global-auto-revert-non-file-buffers t)
