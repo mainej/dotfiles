@@ -197,7 +197,9 @@ the mode-line."
 (defun cider-run-all-tests ()
   "Runs all tests in a project. Assumes in a namespace that has run-all-tests."
   (interactive)
-  (cider-insert-in-repl "(run-all-tests)" t))
+  (cider-tooling-eval
+   "(require 'clojure.test) (clojure.test/run-all-tests)"
+   (cider-interactive-eval-handler (current-buffer))))
 
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
