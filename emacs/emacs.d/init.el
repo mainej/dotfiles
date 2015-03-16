@@ -273,3 +273,5 @@ the mode-line."
         (linum-mode 1)
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
+
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
