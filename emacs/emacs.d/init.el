@@ -21,7 +21,8 @@
                       color-theme-sanityinc-tomorrow
                       window-number
                       exec-path-from-shell
-                      popwin))
+                      popwin
+                      multiple-cursors))
 
 (package-initialize)
 
@@ -276,3 +277,5 @@ the mode-line."
 
 (setq erc-hide-list '("JOIN" "NICK" "PART" "QUIT"))
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT"))
+
+(global-set-key (kbd "C->") 'mc/mark-next-word-like-this)
