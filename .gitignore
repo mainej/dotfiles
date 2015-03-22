@@ -1,2 +1,5 @@
 .DS_Store
 .netrwhist
+
+emacs/emacs.d/*
+!emacs/emacs.d/customac

@@ -2,36 +2,10 @@
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 
-(defvar my-packages '(smartparens
-                      magit
-                      projectile
-                      flx-ido
-                      smex
-                      ag
-                      ace-jump-mode
-                      smooth-scrolling
-                      browse-kill-ring
-                      expand-region
-                      iy-go-to-char
-                      rainbow-delimiters
-                      clojure-mode
-                      cider
-                      auto-complete
-                      ac-cider
-                      color-theme-sanityinc-tomorrow
-                      window-number
-                      exec-path-from-shell
-                      popwin
-                      multiple-cursors))
-
-(package-initialize)
-
-(unless package-archive-contents
-  (package-refresh-contents))
-
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+(defvar root-dir (file-name-directory (or (buffer-file-name) load-file-name)))
+(defvar customac-dir (expand-file-name "customac" root-dir))
+(add-to-list 'load-path customac-dir)
+(require 'customac-packages)
 
 (require 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
