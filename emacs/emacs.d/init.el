@@ -11,9 +11,7 @@
 (require 'customac-ido)
 (require 'customac-auto-complete)
 (require 'customac-clojure)
-
-(require 'exec-path-from-shell)
-(exec-path-from-shell-initialize)
+(require 'customac-osx)
 
 (require 'magit)
 (add-hook 'magit-log-edit-mode-hook
@@ -101,10 +99,6 @@ the mode-line."
 (require 'color-theme-sanityinc-tomorrow)
 (load-theme 'sanityinc-tomorrow-night t)
 (set-face-attribute 'default nil :height 140)
-(setq mac-option-key-is-meta t
-      mac-command-key-is-meta t
-      mac-command-modifier 'meta
-      mac-option-modifier 'meta)
 
 ;; Quietly auto refresh dired
 (setq global-auto-revert-non-file-buffers t)
