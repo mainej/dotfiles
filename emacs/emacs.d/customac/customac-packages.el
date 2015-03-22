@@ -1,5 +1,4 @@
-(defvar customac-package-list '(smartparens
-                                magit
+(defvar customac-package-list '(magit
                                 projectile
                                 smex
                                 ag
@@ -8,11 +7,6 @@
                                 browse-kill-ring
                                 expand-region
                                 iy-go-to-char
-                                rainbow-delimiters
-                                clojure-mode
-                                cider
-                                auto-complete
-                                ac-cider
                                 color-theme-sanityinc-tomorrow
                                 window-number
                                 exec-path-from-shell

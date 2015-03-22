@@ -9,11 +9,11 @@
 (require 'customac-packages)
 (require 'customac-popwin)
 (require 'customac-flx-ido)
+(require 'customac-auto-complete)
+(require 'customac-clojure)
 
 (require 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
-
-(require 'rainbow-delimiters)
 
 (require 'magit)
 (add-hook 'magit-log-edit-mode-hook
@@ -26,71 +26,7 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
-(require 'auto-complete)
-(ac-config-default)
-
-(global-auto-complete-mode t)
-(setq ac-auto-show-menu t)
-(setq ac-dwim t)
-(setq ac-use-menu-map t)
-(setq ac-quick-help-delay 1)
-(setq ac-quick-help-height 60)
-(setq ac-disable-inline t)
-(setq ac-show-menu-immediately-on-auto-complete t)
-(setq ac-auto-start 2)
-(setq ac-candidate-menu-min 0)
-
-(set-default 'ac-sources
-             '(ac-source-dictionary
-               ac-source-words-in-buffer
-               ac-source-words-in-same-mode-buffers
-               ac-source-semantic
-               ac-source-yasnippet))
-
-(dolist (mode '(magit-log-edit-mode log-edit-mode org-mode text-mode haml-mode
-                sass-mode yaml-mode csv-mode espresso-mode haskell-mode
-                html-mode nxml-mode sh-mode smarty-mode clojure-mode
-                lisp-mode textile-mode markdown-mode tuareg-mode))
-  (add-to-list 'ac-modes mode))
-
-(require 'ac-cider)
-
 (require 'smooth-scrolling)
-
-(require 'clojure-mode)
-
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("(\\(fn\\)[\[[:space:]]"
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "λ")
-                               nil))))))
-
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("\\(#\\)("
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "ƒ")
-                               nil))))))
-
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("\\(#\\){"
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "∈")
-                               nil))))))
-
-(add-hook 'cider-mode-hook #'eldoc-mode)
-(setq nrepl-log-messages t)
-(setq nrepl-hide-special-buffers t)
-(setq cider-prefer-local-resources t)
-
-(require 'smartparens-config)
-(smartparens-global-mode t)
-(setq sp-base-key-bindings 'paredit)
-(setq sp-autoskip-closing-pair 'always)
-(setq sp-hybrid-kill-entire-symbol nil)
-(sp-use-paredit-bindings)
 
 (projectile-global-mode)
 
@@ -135,13 +71,6 @@ the mode-line."
 
 (require 'browse-kill-ring)
 
-(defun cider-run-all-tests ()
-  "Runs all tests in a project. Assumes in a namespace that has run-all-tests."
-  (interactive)
-  (cider-tooling-eval
-   "(require 'clojure.test) (clojure.test/run-all-tests)"
-   (cider-interactive-eval-handler (current-buffer))))
-
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
@@ -170,10 +99,6 @@ the mode-line."
       save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
 					       "backups"))))
-
-(add-hook 'clojure-mode-hook #'smartparens-strict-mode)
-(add-hook 'clojure-mode-hook #'subword-mode)
-(add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 
 (require 'color-theme-sanityinc-tomorrow)
 (load-theme 'sanityinc-tomorrow-night t)
