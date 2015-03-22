@@ -1,5 +1,6 @@
-(customac-ensure-package 'flx-ido)
+(customac-ensure-packages '(flx-ido smex))
 (require 'flx-ido)
+(require 'smex)
 
 (ido-mode 1)
 (ido-everywhere 1)
@@ -7,4 +8,6 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 
-(provide 'customac-flx-ido)
+(smex-initialize)
+
+(provide 'customac-ido)

@@ -8,7 +8,7 @@
 
 (require 'customac-packages)
 (require 'customac-popwin)
-(require 'customac-flx-ido)
+(require 'customac-ido)
 (require 'customac-auto-complete)
 (require 'customac-clojure)
 
@@ -21,8 +21,6 @@
              (set-fill-column 72)
              (auto-fill-mode 1)))
 
-(require 'smex)
-(smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
