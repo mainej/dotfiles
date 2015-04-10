@@ -27,7 +27,7 @@
 
 (add-hook 'cider-mode-hook #'eldoc-mode)
 (setq nrepl-log-messages t)
-(setq nrepl-hide-special-buffers t)
+(setq nrepl-hide-special-buffers nil)
 (setq cider-prefer-local-resources t)
 
 (smartparens-global-mode t)
