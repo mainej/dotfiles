@@ -9,7 +9,6 @@
   (scroll-bar-mode -1))
 (autoload 'zap-up-to-char "misc"
   "Kill up to, but not including ARGth occurrence of CHAR." t)
-(global-set-key (kbd "M-z") 'zap-up-to-char)
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -19,7 +18,6 @@
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
 (require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
 
 (setq ag-highlight-search t)
 

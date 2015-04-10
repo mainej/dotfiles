@@ -12,6 +12,8 @@
 (global-set-key (kbd "C-o") 'ace-jump-mode)
 (global-set-key (kbd "C-c g s") 'magit-status)
 (global-set-key (kbd "M-y") 'browse-kill-ring)
+(global-set-key (kbd "M-z") 'zap-up-to-char)
+(global-set-key (kbd "C-=") 'er/expand-region)
 (define-key projectile-mode-map (kbd "C-x f") 'projectile-find-file)
 (define-key cider-mode-map (kbd "C-c .") 'cider-run-all-tests)
 (define-key cider-mode-map (kbd "C-c k") 'nrepl-close)
