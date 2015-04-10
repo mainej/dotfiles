@@ -43,6 +43,13 @@
    "(require 'clojure.test) (clojure.test/run-all-tests)"
    (cider-interactive-eval-handler (current-buffer))))
 
+(defun cider-reset-system ()
+  "Calls (reset) in a project. Assumes a user namespace that has reset."
+  (interactive)
+  (cider-tooling-eval
+   "(require 'user)(user/reset)"
+   (cider-interactive-eval-handler (current-buffer))))
+
 (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
 (add-hook 'clojure-mode-hook #'subword-mode)
 (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
