@@ -2,6 +2,6 @@
 (require 'color-theme-sanityinc-tomorrow)
 
 (load-theme 'sanityinc-tomorrow-night t)
-(set-face-attribute 'default nil :height 140)
+(set-face-attribute 'default nil :height 160)
 
 (provide 'customac-theming)
