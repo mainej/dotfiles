@@ -1,8 +1,12 @@
-(customac-ensure-packages '(rainbow-delimiters ac-cider clojure-mode smartparens))
+(customac-ensure-packages '(rainbow-delimiters ac-cider clojure-mode smartparens clj-refactor))
 (require 'rainbow-delimiters)
 (require 'ac-cider)
 (require 'clojure-mode)
 (require 'smartparens-config)
+(require 'clj-refactor)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (clj-refactor-mode 1)
+                               (cljr-add-keybindings-with-prefix "C-c C-v")))
 
 (eval-after-load 'clojure-mode
   '(font-lock-add-keywords
