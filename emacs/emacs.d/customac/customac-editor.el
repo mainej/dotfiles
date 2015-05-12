@@ -38,7 +38,8 @@
       ediff-window-setup-function 'ediff-setup-windows-plain
       save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
-					       "backups"))))
+					       "backups")))
+      auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
