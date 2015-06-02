@@ -22,5 +22,6 @@
 (global-set-key (kbd "<C-M-return>") 'open-line-above)
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 (global-set-key (kbd "C->") 'mc/mark-next-word-like-this)
+(global-set-key "\M-`" 'other-frame)
 
 (provide 'customac-bindings)
