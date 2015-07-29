@@ -61,12 +61,18 @@
 (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
 (add-hook 'cider-repl-mode-hook #'rainbow-delimiters-mode)
 
-;; format buffer on save
+;; fix cider's format to restore the correct line number
+(defun cider-fmt ()
+  (let ((old-line (line-number-at-pos))
+        (old-col  (current-column)))
+    (cider-format-buffer)
+    (goto-line old-line)
+    (move-to-column old-col)))
+
+;; use cider-fmt on saving a clojure buffer
 (add-hook 'clojure-mode-hook
           (lambda ()
-            (let ((old-line (line-number-at-pos)))
-              (add-hook 'after-save-hook 'cider-format-buffer nil 'make-it-local)
-              (goto-line old-line))))
+            (add-hook 'after-save-hook 'cider-fmt nil 'make-it-local)))
 
 (define-clojure-indent
   (defroutes 'defun)
