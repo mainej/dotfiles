@@ -61,6 +61,13 @@
 (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
 (add-hook 'cider-repl-mode-hook #'rainbow-delimiters-mode)
 
+;; format buffer on save
+(add-hook 'clojure-mode-hook
+          (lambda ()
+            (let ((old-line (line-number-at-pos)))
+              (add-hook 'after-save-hook 'cider-format-buffer nil 'make-it-local)
+              (goto-line old-line))))
+
 (define-clojure-indent
   (defroutes 'defun)
   (GET 2)
