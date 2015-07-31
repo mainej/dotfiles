@@ -1,8 +1,8 @@
 (require 'delight)
 
 (delight
- '((smartparens-mode nil "smartparens")
-   (smartparens-strict-mode nil "smartparens")
+ '((smartparens-mode "sp" "smartparens")
+   (smartparens-strict-mode "SP" "smartparens")
    (company-mode nil "company")
    (undo-tree-mode nil "undo-tree")
    (clj-refactor-mode nil "clj-refactor")
