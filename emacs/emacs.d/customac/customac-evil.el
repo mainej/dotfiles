@@ -1,6 +1,5 @@
 (customac-ensure-package 'undo-tree)
 (customac-ensure-package 'evil)
-(customac-ensure-package 'evil-leader)
 (customac-ensure-package 'evil-snipe)
 (customac-ensure-package 'evil-smartparens)
 
@@ -10,7 +9,6 @@
 
 ;; activate evil mode
 (require 'evil)
-(evil-mode 1)
 
 ;; disable evil's space and enter bindings
 (define-key evil-motion-state-map
@@ -23,16 +21,17 @@
 (evil-snipe-mode 1)
 (evil-snipe-override-mode 1)
 
-;; evil-leader, allowing a per-mode leader key
-(require 'evil-leader)
-(global-evil-leader-mode)
-(evil-leader/set-leader "<SPC>")
+;; bind space to C-x for non-chording joy
+(define-key key-translation-map " "
+  (lambda (_)
+    (if (evil-normal-state-p) (kbd "C-x")
+      " ")))
 
-;; some global leader key combos
-(evil-leader/set-key
-  "e" 'find-file
-  "b" 'ido-switch-buffer
-  "k" 'kill-buffer)
+;; and C-c is just comma now
+(define-key key-translation-map ","
+  (lambda (_)
+    (if (evil-normal-state-p) (kbd "C-c")
+      ",")))
 
 ;; smart-parens evil-mode
 (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
