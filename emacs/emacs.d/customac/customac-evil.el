@@ -1,7 +1,4 @@
-(customac-ensure-package 'undo-tree)
-(customac-ensure-package 'evil)
-(customac-ensure-package 'evil-snipe)
-(customac-ensure-package 'evil-smartparens)
+(customac-ensure-packages '(undo-tree evil evil-snipe))
 
 ;; not really sure why, but we actually have to load undo-tree
 ;; or I don't seem to be able to require it...
@@ -19,7 +16,6 @@
 ;; evil-snipe, which makes s a two-character f
 (require 'evil-snipe)
 (evil-snipe-mode 1)
-(evil-snipe-override-mode 1)
 
 ;; bind space to C-x for non-chording joy
 (define-key key-translation-map " "
@@ -34,6 +30,7 @@
       ",")))
 
 ;; smart-parens evil-mode
+(require 'evil-smartparens)
 (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
 
 (provide 'customac-evil)
