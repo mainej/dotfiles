@@ -8,10 +8,13 @@
 (require 'customac-ido)
 (require 'customac-auto-complete)
 (require 'customac-clojure)
-(require 'customac-osx)
 (require 'customac-magit)
 (require 'customac-windowing)
 (require 'customac-theming)
 (require 'customac-erc)
 (require 'customac-bindings)
 (require 'customac-evil)
+
+;; enforce loading this *only* if using osx
+(when (string= system-type "darwin")
+  (require 'customac-osx))
