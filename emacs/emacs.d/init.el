@@ -14,6 +14,7 @@
 (require 'customac-erc)
 (require 'customac-bindings)
 (require 'customac-evil)
+(require 'customac-midnight)
 
 ;; enforce loading this *only* if using osx
 (when (string= system-type "darwin")
