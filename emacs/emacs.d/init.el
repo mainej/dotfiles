@@ -16,6 +16,7 @@
 (require 'customac-evil)
 (require 'customac-midnight)
 (require 'customac-delight)
+(require 'customac-powerline)
 
 ;; enforce loading this *only* if using osx
 (when (string= system-type "darwin")
