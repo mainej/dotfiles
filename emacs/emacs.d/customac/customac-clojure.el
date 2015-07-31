@@ -65,9 +65,11 @@
 (defun cider-fmt ()
   (let ((old-line (line-number-at-pos))
         (old-col  (current-column)))
-    (cider-format-buffer)
-    (goto-line old-line)
-    (move-to-column old-col)))
+    (ignore-errors (cider-format-buffer))
+    (beginning-of-buffer)
+    (forward-line (- old-line 1))
+    (forward-char old-col)
+    nil))
 
 ;; use cider-fmt on saving a clojure buffer
 (add-hook 'clojure-mode-hook
