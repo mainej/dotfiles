@@ -14,3 +14,4 @@
 (require 'customac-theming)
 (require 'customac-erc)
 (require 'customac-bindings)
+(require 'customac-evil)
