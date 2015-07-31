@@ -15,6 +15,7 @@
 (require 'customac-bindings)
 (require 'customac-evil)
 (require 'customac-midnight)
+(require 'customac-diminish)
 
 ;; enforce loading this *only* if using osx
 (when (string= system-type "darwin")
