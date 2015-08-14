@@ -39,7 +39,8 @@
       save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
 					       "backups")))
-      auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+      auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
+      create-lockfiles nil)
 
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
