@@ -44,7 +44,8 @@
   (interactive)
   (if evil-state
       (cleanse-emacs)
-    (corrupt-emacs)))
+    (corrupt-emacs))
+  (set-powerline-color))
 
 (defun corrupt-emacs ()
   (progn
@@ -60,5 +61,19 @@
     (evil-mode -1)
     (setq evil-state nil)
     (global-unset-key "\C-z")))
+
+(defun set-powerline-color ()
+  (let ((color (cond ((minibufferp) (face-foreground 'region))
+                     ((evil-normal-state-p) (face-foreground 'rainbow-delimiters-depth-2-face))
+                     ((evil-insert-state-p) (face-foreground 'rainbow-delimiters-depth-4-face))
+                     ((evil-visual-state-p) (face-foreground 'rainbow-delimiters-depth-3-face)))))
+    (set-face-foreground 'mode-line color)
+    (set-face-foreground 'powerline-active1 color)
+    (set-face-foreground 'powerline-active2 color)))
+
+(add-hook 'post-command-hook
+          'set-powerline-color)
+(add-hook 'evil-mode-hook
+          'set-powerline-color)
 
 (provide 'customac-evil)
