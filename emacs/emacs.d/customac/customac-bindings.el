@@ -26,6 +26,5 @@
 
 (global-unset-key "\C-z")
 (global-unset-key "\C-x\C-z")
-(global-set-key "\C-z" 'evil-mode)
 
 (provide 'customac-bindings)

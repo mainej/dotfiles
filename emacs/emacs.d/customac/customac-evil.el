@@ -1,4 +1,6 @@
-(customac-ensure-packages '(undo-tree evil evil-snipe))
+(customac-ensure-packages '(undo-tree
+                            evil
+                            evil-snipe))
 
 ;; not really sure why, but we actually have to load undo-tree
 ;; or I don't seem to be able to require it...
@@ -6,6 +8,8 @@
 
 ;; activate evil mode
 (require 'evil)
+
+(global-set-key (kbd "C-`") 'toggle-evil)
 
 ;; disable evil's space and enter bindings
 (define-key evil-motion-state-map
@@ -28,5 +32,33 @@
   (lambda (_)
     (if (evil-normal-state-p) (kbd "C-c")
       ",")))
+
+;;; toggles emacs mode slightly better in the following ways:
+;;  when evil is turned *on*, smartparens-strict is *disabled*
+;;  when evil is turned *off*, smartparens-strict mode is *enabled*
+;;  furthermore, this is very careful to turn evil on and off *everywhere* if=
+;;    at all possible
+(defvar evil-state nil)
+
+(defun toggle-evil ()
+  (interactive)
+  (if evil-state
+      (cleanse-emacs)
+    (corrupt-emacs)))
+
+(defun corrupt-emacs ()
+  (progn
+    (setq evil-default-state 'normal)
+    (smartparens-global-strict-mode -1)
+    (evil-mode)
+    (setq evil-state 1)))
+
+(defun cleanse-emacs ()
+  (progn
+    (setq evil-default-state 'emacs)
+    (smartparens-global-strict-mode 1)
+    (evil-mode -1)
+    (setq evil-state nil)
+    (global-unset-key "\C-z")))
 
 (provide 'customac-evil)
