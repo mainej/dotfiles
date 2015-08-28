@@ -29,8 +29,4 @@
     (if (evil-normal-state-p) (kbd "C-c")
       ",")))
 
-;; smart-parens evil-mode
-(require 'evil-smartparens)
-(add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
-
 (provide 'customac-evil)
