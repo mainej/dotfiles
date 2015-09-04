@@ -1,6 +1,7 @@
 (require 'smooth-scrolling)
 
 (projectile-global-mode)
+(winner-mode)
 
 (menu-bar-mode -1)
 (when (fboundp 'tool-bar-mode)
