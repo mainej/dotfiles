@@ -24,7 +24,8 @@
 (global-set-key (kbd "C->") 'mc/mark-next-word-like-this)
 (global-set-key "\M-`" 'other-frame)
 
-(global-unset-key "\C-z")
-(global-unset-key "\C-x\C-z")
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
+(global-unset-key (kbd "C-x C-c"))
 
 (provide 'customac-bindings)
