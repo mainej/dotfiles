@@ -6,4 +6,6 @@
              (set-fill-column 72)
              (auto-fill-mode 1)))
 
+(setq magit-push-always-verify nil)
+
 (provide 'customac-magit)
