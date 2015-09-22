@@ -18,6 +18,7 @@
 (define-key cider-mode-map (kbd "C-c .") 'cider-run-all-tests)
 (define-key cider-mode-map (kbd "C-c k") 'nrepl-close)
 (define-key cider-mode-map (kbd "C-c s r") 'cider-reset-system)
+(define-key smartparens-mode-map (kbd "M-p") 'sp-rewrap-sexp)
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-M-return>") 'open-line-above)
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
