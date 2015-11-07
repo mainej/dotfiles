@@ -33,6 +33,7 @@
 (setq nrepl-log-messages t)
 (setq nrepl-hide-special-buffers nil)
 (setq cider-prefer-local-resources t)
+(setq cider-auto-select-test-report-buffer nil)
 
 (smartparens-global-mode t)
 (setq sp-base-key-bindings 'paredit)
