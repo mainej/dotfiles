@@ -1,6 +1,6 @@
 (customac-ensure-package 'company)
 
-(setq company-idle-delay 0)
+(setq company-idle-delay 0.1)
 (setq company-minimum-prefix-length 1)
 
 (add-hook 'cider-repl-mode-hook #'company-mode)
